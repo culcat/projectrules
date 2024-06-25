@@ -11,6 +11,7 @@
       </div>
     </div>
   </div>
+  <Form/>
   <Footer/>
 </template>
 
@@ -30,6 +31,7 @@ import eighth from '@/assets/photo_2024-06-22_17-27-43.png'
 import ninth from '@/assets/photo_2024-06-22_17-27-43-1.png'
 import tenth from '@/assets/photo_2024-06-22_17-27-43-2.png'
 import Footer from "@/components/Footer.vue";
+import Form from "@/components/Form.vue";
 
 const projects = {
   images: [

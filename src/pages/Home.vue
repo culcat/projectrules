@@ -11,8 +11,9 @@ import ServicesComponent from "@/components/ServicesComponent.vue";
   <main>
     <section class="container-head">
       <h1 class="main-title">АРХИТЕКТУРНАЯ МАСТЕРСКАЯ</h1>
+      <div class="text-wrapper-2">
       <h3 class="main-subtitle">Индивидуальное проектирование загородных домов и дизайн интерьера</h3>
-      <button>Получить консультацию</button>
+      <button>Получить консультацию</button></div>
     </section>
     <section class="container">
       <h1 class="title">МАСТЕРСКАЯ <br><br> «ПРАВИЛА ПРОЕКТА»</h1>
@@ -58,13 +59,36 @@ import ServicesComponent from "@/components/ServicesComponent.vue";
   font-size: 24px;
   line-height: 29px;
 }
-.container-head{
+.text-wrapper-2  {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.container-head {
   background: url("../assets/photo.png") no-repeat;
-  background-size: 100%;
-  width: 100%;
-  height: 1040px;
+  background-size: 100vw;
+  width: 100vw;
+  height:700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align items to the bottom */
 }
 
+.main-title,
+.main-subtitle,
+button {
+  color: #fff;
+}
+
+/* Additional styling for the button */
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #004d00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -76,16 +100,14 @@ import ServicesComponent from "@/components/ServicesComponent.vue";
   width: 150px;
 }
 .main-title {
-  text-align: center;
+  text-align: left;
   font-size: 36px;
   margin: 20px 0;
   color: #fff;
 
 }
 .main-subtitle {
-  text-align: center;
   font-size: 24px;
-  margin: 10px 0;
   color: #fff;
 
 }
@@ -98,6 +120,7 @@ button {
   color: #fff;
   border: none;
   cursor: pointer;
+
 }
 .title {
   font-size: 44px;
