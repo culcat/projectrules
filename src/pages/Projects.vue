@@ -24,59 +24,67 @@ import projectsData from "@/data/projects.json";
 
 const images = ref(projectsData);
 </script>
+
 <style scoped>
-*{
-  font-family: HelveticaNeueCyrmedium, sans-serif;
-  font-style: normal;
-  font-size: 84px;
-  font-weight: 400;
-  line-height: 29px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
 }
+
 .projects {
   text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .project-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  justify-content: center; /* Центрируем элементы по горизонтали */
+  gap: 16px; /* Расстояние между элементами */
 }
 
 .project-image {
   position: relative;
-  width: 300px;
+  width: calc(50% - 8px); /* Ширина элемента - половина от общей ширины с учетом отступов */
+  max-width: 300px; /* Максимальная ширина изображения */
   box-sizing: border-box;
 }
 
 .project-image img {
-  width: 300px;
-  height: 200px;
-  transition: transform 1s;
+  width: 100%; /* Растягиваем изображение на всю ширину контейнера */
+  height: 300px; /* Фиксированная высота изображения */
+  transition: transform 1s; /* Анимация при наведении */
 }
 
 .project-image .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: fit-content;
-  height: fit-content;
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+  opacity: 0; /* Начальная прозрачность */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 1s;
+  transition: opacity 1s; /* Анимация появления */
 }
 
 .project-image:hover .overlay {
-  opacity: 1;
+  opacity: 1; /* Показываем оверлей при наведении */
 }
 
-.project-image .overlay-text {
+.overlay-text {
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
 }
 </style>

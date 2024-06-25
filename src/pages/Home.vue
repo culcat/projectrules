@@ -111,65 +111,46 @@ onMounted(() => {
 </template>
 
 <style scoped>
+/* Reset default browser styles */
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+}
+
+/* Set base font and line height */
+body {
   font-family: HelveticaNeueCyr, sans-serif;
   font-style: normal;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 16px; /* Base font size */
+  line-height: 1.6; /* Base line height */
 }
 
-.text-wrapper-2  {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-.container-head {
-  background: url("../assets/photo.png") no-repeat;
-  background-size: 100vw;
-  width: calc(100vw - 20px);
-  height:700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Align items to the bottom */
+/* Ensure full-width viewport */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-.main-title,
-.main-subtitle,
-button {
+/* Basic styling for headings and buttons */
+.main-title,.main-subtitle {
   color: #fff;
 }
 
-/* Additional styling for the button */
-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #004d00;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.logo {
-  display: block;
-  margin: 0 auto;
-  width: 150px;
-}
-.main-title {
-  text-align: left;
+h1 {
   font-size: 36px;
   margin: 20px 0;
-  color: #fff;
-
+  text-align: center;
 }
-.main-subtitle {
+
+h3 {
   font-size: 24px;
-  color: #fff;
-
+  margin: 10px 0;
+  text-align: center;
 }
+
 button {
   display: block;
   margin: 20px auto;
@@ -179,74 +160,179 @@ button {
   color: #fff;
   border: none;
   cursor: pointer;
+}
 
+button:hover {
+  background-color: #003300; /* Darken color on hover */
 }
-.title {
-  font-size: 44px;
-}
-p {
-  text-align: justify;
-  line-height: 19.76px;
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: 300;
-}
-.statistic {
+
+/* Header section */
+.container-head {
+  background: url("../assets/photo.png") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
   display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
-  border: solid black 1px;
-  border-left: none;
-  border-right: none;
-}
-.statistic-item {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   text-align: center;
 }
-.statistic-number {
-  font-size: 32px;
-  font-weight: bold;
+
+/* Main content container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
-.statistic-text {
-  font-size: 16px;
-  margin-top: 5px;
-}
+
+/* Text and image section */
 .text {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .text img {
   width: 100%;
   max-width: 603px;
   height: auto;
-  margin-left: 0;
+  margin: 20px 0;
 }
+
 .text-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 100%;
   flex: 1;
   margin-right: 20px;
 }
+
+/* Statistic section */
+.statistic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.statistic-item {
+  text-align: center;
+  flex: 1 1 30%;
+  margin-bottom: 20px;
+}
+
+.statistic-number {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.statistic-text {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Projects section */
 .projects {
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
+
 .project-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
+
 .project-item {
   text-align: center;
 }
+
 .project-item img {
   width: 300px;
   height: 250px;
+  object-fit: cover;
 }
+
+/* Services and Contacts sections */
+.services, .contacts {
+  padding: 20px;
+}
+
+/* Footer section */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container-head {
+    height: 400px;
+  }
+
+  .main-title {
+    font-size: 28px;
+  }
+
+  .main-subtitle {
+    font-size: 20px;
+  }
+
+  .text img {
+    margin: 10px 0;
+  }
+
+  .statistic {
+    margin-top: 20px;
+  }
+
+  .statistic-item {
+    flex: 1 1 45%; /* Adjust item size for smaller screens */
+    margin-bottom: 10px;
+  }
+
+  .statistic-number {
+    font-size: 24px;
+  }
+
+  .projects {
+    margin-top: 20px;
+  }
+
+  .project-item img {
+    width: 100%; /* Make project images full width on smaller screens */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 24px;
+  }
+
+  .main-subtitle {
+    font-size: 18px;
+  }
+
+  .text {
+    flex-direction: column;
+  }
+
+  .text-wrapper {
+    margin-right: 0;
+  }
+
+  .statistic-item {
+    flex: 1 1 100%; /* Full width for statistic items on very small screens */
+  }
+
+  .project-item img {
+    width: 100%; /* Ensure project images adapt to container width */
+    height: auto;
+  }
+}
+
 </style>

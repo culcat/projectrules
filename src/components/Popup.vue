@@ -9,7 +9,7 @@ export default {
       required: true
     }
   },
-  setup() {
+  setup(props, { emit }) { // Добавляем параметр emit
     const serviceOptions = computed(() => {
       return data.services.map(service => ({
         name: service.name,
@@ -21,7 +21,7 @@ export default {
     const isButtonDisabled = computed(() => !isChecked.value);
 
     const closePopup = () => {
-      emit('close');
+      emit('close'); // Вызываем emit для события 'close'
     };
 
     return {
@@ -36,7 +36,8 @@ export default {
 
 <template>
   <div v-if="isVisible" class="popup-overlay">
-    <div class="popup-content">
+    <div class="popup-content">      <button class=" button-close" @click="closePopup">×</button>
+
       <form action="mailto:2487654@bk.ru" method="post"
       enctype="text/plain">
       <input type="text" placeholder="Имя" class="input-field" />
@@ -58,7 +59,20 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+.button-close {
+  float: right;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: #999;
+  font-size: 20px;
+  cursor: pointer;
+}
 
+.button-close:hover {
+  color: #666;
+}
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -135,13 +149,7 @@ h2 {
 
 .button:hover:not(:disabled) {
   background: #0056b3;
-}
 
-.button-close {
-  background: #dc3545;
-}
 
-.button-close:hover {
-  background: #c82333;
 }
 </style>

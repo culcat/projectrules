@@ -37,29 +37,49 @@ const showMore = () => {
         <div class="container">
           <h1>{{ service.name }}</h1>
           <p>от {{ service.price }}р. за кв.м.</p>
-          <img :src="arrow" alt="arrow" />
+          <img :src="arrow" width="50px" height="50px" alt="arrow" />
         </div>
       </div>
     </div>
-    <button @click="showMore">
+    <div class="btn">
+    <button  @click="showMore">
       {{ visibleServices === service.services.length ? 'Показать меньше' : 'Показать еще' }}
-    </button>
+    </button></div>
   </div>
 </template>
 
 <style scoped>
-.services{
+.services {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.container{
+
+.wrapper {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: center; /* Center items horizontally */
+}
+
+.container {
+  display: flex;
+  flex-direction: row; /* Stacked layout on small screens */
   border: 1px solid #061C0480;
   border-left: none;
   border-right: none;
-  align-items: center;
-  gap: 100px;
+  margin: 10px;
+  padding: 10px;
+  width: 300px; /* Adjust width as needed */
+}
+
+.btn {
+  margin-top: 20px; /* Space between button and services */
+  text-align: center; /* Center button */
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%; /* Full width on smaller screens */
+  }
 }
 </style>
