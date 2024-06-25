@@ -4,6 +4,21 @@ import Footer from "@/components/Footer.vue";
 import Logo from '@/assets/Logo.png';
 import Photo from '@/assets/women.png';
 import ServicesComponent from "@/components/ServicesComponent.vue";
+import Services from "@/pages/Services.vue";
+import ContactsComponent from "@/components/ContactsComponent.vue";
+import {ref} from "vue";
+import Popup from "@/components/Popup.vue";
+
+
+const isPopupVisible = ref(false);
+
+const openPopup = () => {
+  isPopupVisible.value = true;
+};
+
+const closePopup = () => {
+  isPopupVisible.value = false;
+};
 </script>
 
 <template>
@@ -12,8 +27,9 @@ import ServicesComponent from "@/components/ServicesComponent.vue";
     <section class="container-head">
       <h1 class="main-title">АРХИТЕКТУРНАЯ МАСТЕРСКАЯ</h1>
       <div class="text-wrapper-2">
-      <h3 class="main-subtitle">Индивидуальное проектирование загородных домов и дизайн интерьера</h3>
-      <button>Получить консультацию</button></div>
+        <h3 class="main-subtitle">Индивидуальное проектирование загородных домов и дизайн интерьера</h3>
+        <button @click="openPopup">Получить консультацию</button>
+      </div>
     </section>
     <section class="container">
       <h1 class="title">МАСТЕРСКАЯ <br><br> «ПРАВИЛА ПРОЕКТА»</h1>
@@ -48,8 +64,12 @@ import ServicesComponent from "@/components/ServicesComponent.vue";
     <section class="services">
       <ServicesComponent/>
     </section>
+    <section class="contacts">
+      <ContactsComponent/>
+    </section>
   </main>
   <Footer/>
+  <Popup :isVisible="isPopupVisible" @close="closePopup"/>
 </template>
 
 <style scoped>
@@ -67,7 +87,7 @@ import ServicesComponent from "@/components/ServicesComponent.vue";
 .container-head {
   background: url("../assets/photo.png") no-repeat;
   background-size: 100vw;
-  width: 100vw;
+  width: calc(100vw - 20px);
   height:700px;
   display: flex;
   flex-direction: column;

@@ -10,7 +10,10 @@
     <div class="wrapper">
  <router-link to="/">ГЛАВНАЯ</router-link>
       <router-link to="/projects">ПРОЕКТЫ</router-link>
-      <router-link to="/services">УСЛУГИ</router-link></div>
+      <router-link to="/services">УСЛУГИ</router-link>
+      <router-link to="/about">О КОМПАНИИ</router-link>
+    </div>
+
 
   </header>
 </template>

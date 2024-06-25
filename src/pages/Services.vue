@@ -3,12 +3,13 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import ServicesComponent from "@/components/ServicesComponent.vue";
+import Form from "@/components/Form.vue";
 </script>
 
 <template>
   <Header/>
-  <h1>Услуги</h1>
 <ServicesComponent/>
+  <Form/>
   <Footer/>
 </template>
 

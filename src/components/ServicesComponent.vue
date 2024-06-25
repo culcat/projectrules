@@ -31,6 +31,7 @@ const showMore = () => {
 
 <template>
   <div class="services">
+    <h1>УСЛУГИ</h1>
     <div class="wrapper">
       <div v-for="(service, index) in service.services" :key="index" v-show="index < visibleServices">
         <div class="container">
