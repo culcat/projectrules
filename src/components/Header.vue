@@ -37,6 +37,8 @@ const toggleMenu = () => {
   line-height: 29px;
 }
 
+a{text-decoration: none;
+  color: #000;}
 header {
   display: flex;
   justify-content: space-between;
@@ -52,6 +54,7 @@ header {
 .wrapper {
   display: flex;
   gap: 30px;
+
 }
 
 .burger-menu {

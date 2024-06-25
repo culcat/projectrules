@@ -5,9 +5,12 @@
     <div class="project-wrapper">
       <div class="project-image" v-for="image in images" :key="image.name">
         <img :src="image.path" :alt="image.name" />
-        <div class="overlay">
-          <div class="overlay-text">{{ image.name }}</div>
-        </div>
+        <router-link :to="'/project/' + image.id">
+          <div class="overlay">
+            <div class="overlay-text">{{ image.name }}</div>
+          </div>
+        </router-link>
+
       </div>
     </div>
   </div>
