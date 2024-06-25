@@ -54,7 +54,9 @@ const showMore = () => {
   flex-direction: column;
   align-items: center;
 }
-
+h1{
+  font-size: 34px;
+}
 .wrapper {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap on smaller screens */

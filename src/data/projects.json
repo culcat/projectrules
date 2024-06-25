@@ -1,13 +1,13 @@
 [
-  { "name": "photo_2024-06-22_17-26-17 1", "path": "src/assets/photo_2024-06-22_17-26-17 1.png" },
-  { "name": "photo_2024-06-22_17-26-17 1-1", "path": "src/assets/photo_2024-06-22_17-26-17 1-1.png" },
-  { "name": "photo_2024-06-22_17-26-34", "path": "src/assets/photo_2024-06-22_17-26-34.png" },
-  { "name": "photo_2024-06-22_17-26-34-1", "path": "src/assets/photo_2024-06-22_17-26-34-1.png" },
-  { "name": "photo_2024-06-22_17-26-34-2", "path": "src/assets/photo_2024-06-22_17-26-34-2.png" },
-  { "name": "photo_2024-06-22_17-27-38", "path": "src/assets/photo_2024-06-22_17-27-38.png" },
-  { "name": "photo_2024-06-22_17-27-38-1", "path": "src/assets/photo_2024-06-22_17-27-38-1.png" },
-  { "name": "photo_2024-06-22_17-27-43", "path": "src/assets/photo_2024-06-22_17-27-43.png" },
-  { "name": "photo_2024-06-22_17-27-43-1", "path": "src/assets/photo_2024-06-22_17-27-43-1.png" },
-  { "name": "photo_2024-06-22_17-27-43-2", "path": "src/assets/photo_2024-06-22_17-27-43-2.png" },
-  { "name": "Group 31", "path": "src/assets/Group 31.png" }
+  { "id": 1, "name": "photo_2024-06-22_17-26-17 1", "path": "src/assets/photo_2024-06-22_17-26-17 1.png", "description": "" },
+  { "id": 2, "name": "photo_2024-06-22_17-26-17 1-1", "path": "src/assets/photo_2024-06-22_17-26-17 1-1.png", "description": "" },
+  { "id": 3, "name": "photo_2024-06-22_17-26-34", "path": "src/assets/photo_2024-06-22_17-26-34.png", "description": "" },
+  { "id": 4, "name": "photo_2024-06-22_17-26-34-1", "path": "src/assets/photo_2024-06-22_17-26-34-1.png", "description": "" },
+  { "id": 5, "name": "photo_2024-06-22_17-26-34-2", "path": "src/assets/photo_2024-06-22_17-26-34-2.png", "description": "" },
+  { "id": 6, "name": "photo_2024-06-22_17-27-38", "path": "src/assets/photo_2024-06-22_17-27-38.png", "description": "" },
+  { "id": 7, "name": "photo_2024-06-22_17-27-38-1", "path": "src/assets/photo_2024-06-22_17-27-38-1.png", "description": "" },
+  { "id": 8, "name": "photo_2024-06-22_17-27-43", "path": "src/assets/photo_2024-06-22_17-27-43.png", "description": "" },
+  { "id": 9, "name": "photo_2024-06-22_17-27-43-1", "path": "src/assets/photo_2024-06-22_17-27-43-1.png", "description": "" },
+  { "id": 10, "name": "photo_2024-06-22_17-27-43-2", "path": "src/assets/photo_2024-06-22_17-27-43-2.png", "description": "" },
+  { "id": 11, "name": "Group 31", "path": "src/assets/Group 31.png", "description": "" }
 ]
