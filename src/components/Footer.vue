@@ -21,20 +21,26 @@ import whatsapp from '@/assets/WhatsApp.svg';
       <div class="contact-info">
         <img :src="telegram" alt="telegram" />
         <img :src="whatsapp" alt="whatsapp" />
-        <p>+7 (863) 291-35-19</p>
+        <a href="tel:+7(863)291-35-19" target="_blank"><p>+7 (863) 291-35-19</p></a>
       </div>
     </div>
   </footer>
 </template>
 
 <style scoped>
+*{
+  font-family:  'Inter',sans-serif;
+}
 footer {
   background-color: #0C220B; /* Dark green background */
   color: white;
   padding: 20px 0;
   text-align: center;
 }
-
+a{
+  text-decoration: none;
+  color:white;
+}
 .wrapper {
   display: flex;
   justify-content: space-around;

@@ -34,6 +34,9 @@ const isButtonDisabled = computed(() => !isChecked.value)
 </template>
 
 <style scoped>
+*{
+  font-family: 'Inter', sans-serif;
+}
 .formContainer {
   display: flex;
   justify-content: center;

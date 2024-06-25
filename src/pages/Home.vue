@@ -97,7 +97,7 @@ onMounted(() => {
           <img :src="project.path" :alt="project.name"></router-link>
       </div>
     </div>
-    <button v-if="showMoreVisible" @click="showMoreProjects">Показать больше</button>
+   <router-link to="/projects"> <button >Показать больше</button></router-link>
   </section>
     <section class="services">
       <ServicesComponent/>
@@ -138,6 +138,7 @@ html, body {
 /* Basic styling for headings and buttons */
 .main-title,.main-subtitle {
   color: #fff;
+
 }
 
 h1 {
@@ -176,8 +177,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 /* Main content container */
@@ -266,13 +267,6 @@ button:hover {
   padding: 20px;
 }
 
-/* Footer section */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
