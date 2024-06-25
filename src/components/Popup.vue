@@ -37,8 +37,10 @@ export default {
 <template>
   <div v-if="isVisible" class="popup-overlay">
     <div class="popup-content">
+      <form action="mailto:2487654@bk.ru" method="post"
+      enctype="text/plain">
       <input type="text" placeholder="Имя" class="input-field" />
-      <input type="email" placeholder="Номер телефона" class="input-field" />
+      <input type="text" placeholder="Номер телефона" class="input-field" />
       <select class="select">
         <option selected disabled value="">Выберите сервис</option>
         <option v-for="service in serviceOptions" :key="service.name">{{ service.name }}</option>
@@ -49,6 +51,7 @@ export default {
         <label for="checkbox">Даю согласие на обработку персональных данных</label>
       </div>
       <button type="submit" class="button" :disabled="isButtonDisabled">Отправить</button>
+      </form>
     </div>
   </div>
 </template>

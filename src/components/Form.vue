@@ -15,9 +15,10 @@ const isButtonDisabled = computed(() => !isChecked.value)
 
 <template>
   <section class="formContainer">
-    <form class="form">
+    <form action="mailto:2487654@bk.ru" method="post"
+          enctype="text/plain" class="form">
       <input type="text" class="input" placeholder="Имя" />
-      <input type="email" class="input" placeholder="Номер телефона" />
+      <input type="text" class="input" placeholder="Номер телефона" />
       <textarea class="textarea" placeholder="Сообщение"></textarea>
       <select class="select">
         <option selected disabled value="">Выберите сервис</option>

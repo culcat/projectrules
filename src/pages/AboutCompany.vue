@@ -7,6 +7,7 @@ import Footer from "@/components/Footer.vue";
 
 <template>
 <Header/>
+  <main>
   <section class="about-company">
   <h1 class="title">О КОМПАНИИ</h1>
     <div class="text"> <h3>СОЗДАЙТЕ СВОЮ УНИКАЛЬНОСТЬ</h3>
@@ -35,6 +36,7 @@ import Footer from "@/components/Footer.vue";
   </section>
 
   <section class="women">
+    <div class="women-wrapper">
     <h1 class="title">АСЯ СЕРГЕЕВНА ВЕРОПOTВЕЛЬЯН</h1>
     <div class="text">Ася Сергеевна - опытный архитектор с более чем 18-летним стажем в области архитектуры. Она является директором архитектурной мастерской и имеет богатый опыт работы в различных организациях, включая ООО РК «Ростов-Дом», «Сантехмонтаж», «СевКавНипиАгроПром» и МУП «Энтазис».
 
@@ -47,7 +49,7 @@ import Footer from "@/components/Footer.vue";
       ДОСТИЖЕНИЯ
 
       Ася Сергеевна является членом Союза архитекторов России с 2008 года и автором запатентованной торговой марки "Живой Дом", которая имеет подтвержденные реальные результаты. Она руководит Творческой Архитектурной мастерской «Правила Проекта» и является директором архитектурной мастерской.</div>
-    <img src="../assets/Women.png" alt="women">
+    </div>  <img src="../assets/Women.png" alt="women">
   </section>
 
   <section class="author-development">
@@ -56,17 +58,40 @@ import Footer from "@/components/Footer.vue";
     <div class="text">(свидетельство на товарный знак №607150)
       Это проект, в котором учитываются помимо архитектурных, санитарно-эпидемиологических норм, конструктивных особенностей - еще и энергетика получившегося пространства. Мы имеем возможность подстраивать конструкции дома таким образом, чтобы получившиеся помещения подпитывали Вас в нужной сфере (бизнес, деньги, семья, дети, здоровье и др.). </div>
   </section>
+  </main>
   <Form/>
   <Footer/>
 </template>
 
 <style scoped>
-.about-company{
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.about-company, .women, .author-development {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.about-company {
+  background: url("../assets/LogoBack.png") no-repeat center;
+  background-size: cover;
+}
+
+.women {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.women-wrapper {
   display: flex;
   flex-direction: column;
-  align-items:flex-start;
-  background: url("../assets/LogoBack.png");
-
+  align-items: flex-start;
 }
 
 .title {
@@ -86,9 +111,10 @@ import Footer from "@/components/Footer.vue";
   font-size: 24px;
   line-height: 29px;
   color: #000000;
-  width: 50%;
+  width: 100%;
 }
-.text h3{
+
+.text h3 {
   font-family: HelveticaNeueCyr, sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -97,4 +123,83 @@ import Footer from "@/components/Footer.vue";
   color: #096201;
 }
 
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .text {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .text {
+    width: 80%;
+  }
+}
+</style><style scoped>
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.about-company, .women, .author-development {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.about-company {
+  background: url("../assets/LogoBack.png") no-repeat center;
+  background-size: cover;
+}
+
+.women {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.women-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  color: #096201;
+  margin-bottom: 30px;
+}
+
+.text {
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  width: 100%;
+}
+
+.text h3 {
+  font-family: HelveticaNeueCyr, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 43px;
+  color: #096201;
+}
 </style>
+

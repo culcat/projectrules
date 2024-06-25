@@ -1,14 +1,12 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Logo from '@/assets/Logo.png';
 import Photo from '@/assets/women.png';
 import ServicesComponent from "@/components/ServicesComponent.vue";
-import Services from "@/pages/Services.vue";
 import ContactsComponent from "@/components/ContactsComponent.vue";
-import {ref} from "vue";
 import Popup from "@/components/Popup.vue";
-
 
 const isPopupVisible = ref(false);
 
@@ -19,7 +17,38 @@ const openPopup = () => {
 const closePopup = () => {
   isPopupVisible.value = false;
 };
+
+const projects = ref([]);
+const visibleProjects = ref([]);
+const showMoreVisible = ref(false);
+
+const fetchProjects = async () => {
+  try {
+    const response = await fetch('src/data/projects.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    projects.value = data;
+    visibleProjects.value = projects.value.slice(0, 4);
+    if (projects.value.length > 4) {
+      showMoreVisible.value = true;
+    }
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+  }
+};
+
+const showMoreProjects = () => {
+  visibleProjects.value = projects.value;
+  showMoreVisible.value = false;
+};
+
+onMounted(() => {
+  fetchProjects();
+});
 </script>
+
 
 <template>
   <Header/>
@@ -60,10 +89,19 @@ const closePopup = () => {
         </div>
         <img :src="Photo">
       </div>
-    </section>
+    </section><section class="projects">
+    <h1>Наши проекты</h1>
+    <div class="project-list">
+      <div v-for="project in visibleProjects" :key="project.name" class="project-item">
+        <img :src="project.path" :alt="project.name">
+      </div>
+    </div>
+    <button v-if="showMoreVisible" @click="showMoreProjects">Показать больше</button>
+  </section>
     <section class="services">
       <ServicesComponent/>
     </section>
+
     <section class="contacts">
       <ContactsComponent/>
     </section>
@@ -79,6 +117,7 @@ const closePopup = () => {
   font-size: 24px;
   line-height: 29px;
 }
+
 .text-wrapper-2  {
   display: flex;
   flex-wrap: wrap;
@@ -190,5 +229,24 @@ p {
   flex: 1;
   margin-right: 20px;
 }
-
+.projects {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.project-item {
+  text-align: center;
+}
+.project-item img {
+  width: 300px;
+  height: 250px;
+}
 </style>
