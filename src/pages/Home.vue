@@ -93,7 +93,8 @@ onMounted(() => {
     <h1>Наши проекты</h1>
     <div class="project-list">
       <div v-for="project in visibleProjects" :key="project.name" class="project-item">
-        <img :src="project.path" :alt="project.name">
+        <router-link :to="'/project/' + project.id">
+          <img :src="project.path" :alt="project.name"></router-link>
       </div>
     </div>
     <button v-if="showMoreVisible" @click="showMoreProjects">Показать больше</button>
@@ -229,29 +230,35 @@ button:hover {
   margin-top: 5px;
 }
 
-/* Projects section */
 .projects {
   margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+}
+
+.projects h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333; /* Цвет заголовка */
 }
 
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-around;
 }
 
 .project-item {
-  text-align: center;
+  width: 300px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень блока проекта */
 }
 
 .project-item img {
-  width: 300px;
-  height: 250px;
-  object-fit: cover;
+  width: 100%;
+  height: 200px; /* Высота изображения проекта */
+  object-fit: cover; /* Масштабирование изображения */
+  border-bottom-left-radius: 4px; /* Закругление углов изображения */
+  border-bottom-right-radius: 4px;
 }
 
 /* Services and Contacts sections */
