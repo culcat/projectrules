@@ -2,6 +2,7 @@
 import Header from "@/components/Header.vue";
 import Form from "@/components/Form.vue";
 import Footer from "@/components/Footer.vue";
+import woomen from "@/assets/women.png"
 </script>
 
 <template>
@@ -47,7 +48,7 @@ import Footer from "@/components/Footer.vue";
           Ася Сергеевна является членом Союза архитекторов России с 2008 года и автором запатентованной торговой марки "Живой Дом", которая имеет подтвержденные реальные результаты. Она руководит Творческой Архитектурной мастерской «Правила Проекта» и является директором архитектурной мастерской.
         </div>
       </div>
-      <img src="@/assets/Women.png" alt="women">
+      <img :src='woomen' alt="women">
     </section>
 
     <section class="author-development">
